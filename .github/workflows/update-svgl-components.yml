@@ -1,0 +1,98 @@
+name: Update Svgl Components
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+
+      - name: Record start time
+        id: start
+        run: echo "start_time=$(date +%s)" >> $GITHUB_OUTPUT
+
+      - name: Generate Svgl Vue components
+        run: pnpm generate:components
+
+      - name: Compute and format duration
+        id: duration
+        run: |
+          END_TIME=$(date +%s)
+          DURATION=$(( END_TIME - ${{ steps.start.outputs.start_time }} ))
+          MIN=$(( DURATION / 60 ))
+          SEC=$(( DURATION % 60 ))
+          echo "formatted=${MIN}m ${SEC}s" >> $GITHUB_OUTPUT
+
+      - name: Count new Svelte components
+        id: count
+        run: |
+          git fetch origin main
+          COUNT=$(git diff --name-status origin/main | grep '^A' | grep 'src/components/' | wc -l)
+          echo "total=$COUNT" >> $GITHUB_OUTPUT
+
+      - name: Skip if no components found
+        if: steps.count.outputs.total == '0'
+        run: |
+          echo "No new components found."
+          exit 0
+
+      - name: Get list of added component names
+        if: steps.count.outputs.total != '0'
+        id: list
+        run: |
+          FILES=$(git diff --name-status origin/main | grep '^A' | grep 'src/components/' | awk '{print $2}')
+          {
+            echo "names<<EOF"
+            for f in $FILES; do
+              basename "$f" .svelte
+            done
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
+      - name: Format component list for commit
+        if: steps.count.outputs.total != '0'
+        id: pretty
+        run: |
+          {
+            echo "formatted<<EOF"
+            echo "${{ steps.list.outputs.names }}" | while read -r component; do
+              echo "- $component"
+            done
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
+      - name: Reset lockfile changes
+        if: steps.count.outputs.total != '0'
+        run: git checkout -- pnpm-lock.yaml
+
+      - name: Create Pull Request
+        if: steps.count.outputs.total != '0'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: update-svgl-svelte-components
+          branch-suffix: timestamp
+          base: main
+          title: 'chore: update svgl svelte components (added ${{ steps.count.outputs.total }} new components, took ${{ steps.duration.outputs.formatted }})'
+          commit-message: |
+            chore: update svgl svelte components
+
+            Added ${{ steps.count.outputs.total }} new components:
+            ${{ steps.pretty.outputs.formatted }}
+
+          delete-branch: true
+          token: ${{ secrets.GITHUB_TOKEN }}
