@@ -19,6 +19,12 @@ jobs:
         with:
           version: 10
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: 'pnpm'
+
       - name: Install dependencies
         run: pnpm i --no-frozen-lockfile
 
@@ -41,21 +47,30 @@ jobs:
       - name: Count new Svelte components
         id: count
         run: |
-          git fetch origin main
-          COUNT=$(git diff --name-status origin/main | grep '^A' | grep 'src/lib/components/' | wc -l)
+          # Check for untracked files (new components)
+          COUNT=$(git ls-files --others --exclude-standard 'src/lib/components/*.svelte' | wc -l)
           echo "total=$COUNT" >> $GITHUB_OUTPUT
 
+      - name: Check if changes exist
+        id: changes
+        run: |
+          if git diff --quiet && [ $(git ls-files --others --exclude-standard | wc -l) -eq 0 ]; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Skip if no components found
-        if: steps.count.outputs.total == '0'
+        if: steps.changes.outputs.has_changes == 'false' || steps.count.outputs.total == '0'
         run: |
           echo "No new components found."
           exit 0
 
       - name: Get list of added component names
-        if: steps.count.outputs.total != '0'
+        if: steps.changes.outputs.has_changes == 'true' && steps.count.outputs.total != '0'
         id: list
         run: |
-          FILES=$(git diff --name-status origin/main | grep '^A' | grep 'src/lib/components/' | awk '{print $2}')
+          FILES=$(git ls-files --others --exclude-standard 'src/lib/components/*.svelte')
           {
             echo "names<<EOF"
             for f in $FILES; do
@@ -65,7 +80,7 @@ jobs:
           } >> $GITHUB_OUTPUT
 
       - name: Format component list for commit
-        if: steps.count.outputs.total != '0'
+        if: steps.changes.outputs.has_changes == 'true' && steps.count.outputs.total != '0'
         id: pretty
         run: |
           {
@@ -77,11 +92,11 @@ jobs:
           } >> $GITHUB_OUTPUT
 
       - name: Reset lockfile changes
-        if: steps.count.outputs.total != '0'
+        if: steps.changes.outputs.has_changes == 'true'
         run: git checkout -- pnpm-lock.yaml
 
       - name: Create Pull Request
-        if: steps.count.outputs.total != '0'
+        if: steps.changes.outputs.has_changes == 'true' && steps.count.outputs.total != '0'
         uses: peter-evans/create-pull-request@v7
         with:
           branch: update-svgl-svelte-components
@@ -94,5 +109,6 @@ jobs:
             Added ${{ steps.count.outputs.total }} new components:
             ${{ steps.pretty.outputs.formatted }}
 
+            Generation time: ${{ steps.duration.outputs.formatted }}
           delete-branch: true
           token: ${{ secrets.GITHUB_TOKEN }}
