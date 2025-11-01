@@ -1,6 +1,6 @@
 {
 	"name": "@selemondev/svgl-svelte",
-	"version": "0.0.3",
+	"version": "1.0.0",
 	"description": "An optimized package with SVG logos to be used as Svelte components ✨",
 	"author": "Selemondev",
 	"private": false,
@@ -12,7 +12,7 @@
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"generate:components": "pnpm dlx esno scripts/index.ts && pnpm format",
-		"generate:release": "pnpm dlx changelogen@latest --release && npm publish",
+		"generate:release": "pnpm dlx changelogen@latest --release",
 		"prepack": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
