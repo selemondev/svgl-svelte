@@ -103,6 +103,13 @@ jobs:
           branch-suffix: timestamp
           base: main
           title: 'chore: update svgl svelte components (added ${{ steps.count.outputs.total }} new components, took ${{ steps.duration.outputs.formatted }})'
+          body: |
+            chore: update svgl svelte components
+
+            Added ${{ steps.count.outputs.total }} new components:
+            ${{ steps.pretty.outputs.formatted }}
+
+            Generation time: ${{ steps.duration.outputs.formatted }}
           commit-message: |
             chore: update svgl svelte components
 
