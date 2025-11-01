@@ -26,7 +26,7 @@ jobs:
         id: start
         run: echo "start_time=$(date +%s)" >> $GITHUB_OUTPUT
 
-      - name: Generate Svgl Vue components
+      - name: Generate Svgl Svelte components
         run: pnpm generate:components
 
       - name: Compute and format duration
