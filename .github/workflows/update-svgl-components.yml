@@ -42,7 +42,7 @@ jobs:
         id: count
         run: |
           git fetch origin main
-          COUNT=$(git diff --name-status origin/main | grep '^A' | grep 'src/components/' | wc -l)
+          COUNT=$(git diff --name-status origin/main | grep '^A' | grep 'src/lib/components/' | wc -l)
           echo "total=$COUNT" >> $GITHUB_OUTPUT
 
       - name: Skip if no components found
@@ -55,7 +55,7 @@ jobs:
         if: steps.count.outputs.total != '0'
         id: list
         run: |
-          FILES=$(git diff --name-status origin/main | grep '^A' | grep 'src/components/' | awk '{print $2}')
+          FILES=$(git diff --name-status origin/main | grep '^A' | grep 'src/lib/components/' | awk '{print $2}')
           {
             echo "names<<EOF"
             for f in $FILES; do
