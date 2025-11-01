@@ -1,5 +1,48 @@
 # Changelog
 
+## v1.1.0
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v0.0.3...v1.1.0)
+
+### 🚀 Enhancements
+
+- Add new component ([52be26b](https://github.com/selemondev/svgl-svelte/commit/52be26b))
+
+### 💅 Refactors
+
+- Svg regex pattern ([34a9773](https://github.com/selemondev/svgl-svelte/commit/34a9773))
+
+### 📖 Documentation
+
+- Update README.md ([5ec81de](https://github.com/selemondev/svgl-svelte/commit/5ec81de))
+
+### 🏡 Chore
+
+- **release:** V0.0.3 ([c781a20](https://github.com/selemondev/svgl-svelte/commit/c781a20))
+- Turn off svelte/no-at-html-tags rule ([091214b](https://github.com/selemondev/svgl-svelte/commit/091214b))
+- Update lint script ([5607426](https://github.com/selemondev/svgl-svelte/commit/5607426))
+- Update lint script ([50212f9](https://github.com/selemondev/svgl-svelte/commit/50212f9))
+- Update ci workflows ([a89a082](https://github.com/selemondev/svgl-svelte/commit/a89a082))
+- Update ci workflows ([4f887cf](https://github.com/selemondev/svgl-svelte/commit/4f887cf))
+- Update lint script ([abbd721](https://github.com/selemondev/svgl-svelte/commit/abbd721))
+- **workflow:** Update ci workflow ([be5f3b3](https://github.com/selemondev/svgl-svelte/commit/be5f3b3))
+- **workflow:** Update release workflow ([3bcba45](https://github.com/selemondev/svgl-svelte/commit/3bcba45))
+- **workflow:** Add svgl components auto-generation workflow ([8aac3f6](https://github.com/selemondev/svgl-svelte/commit/8aac3f6))
+- Refresh lockfile ([ee014fa](https://github.com/selemondev/svgl-svelte/commit/ee014fa))
+- **workflow:** Rename update-svgl-components job name ([0939980](https://github.com/selemondev/svgl-svelte/commit/0939980))
+- **workflow:** Update update-svgl-components ([29dc4ed](https://github.com/selemondev/svgl-svelte/commit/29dc4ed))
+- **workflow:** Update update-svgl-components workflow's pnpm's version ([1055dad](https://github.com/selemondev/svgl-svelte/commit/1055dad))
+- **workflow:** Update update-svgl-components auto-generation workflow ([f6f8ce0](https://github.com/selemondev/svgl-svelte/commit/f6f8ce0))
+- **workflow:** Update update-svgl-components auto-generation workflow ([9831fb3](https://github.com/selemondev/svgl-svelte/commit/9831fb3))
+- Update svgl svelte components ([58f02b5](https://github.com/selemondev/svgl-svelte/commit/58f02b5))
+- **workflow:** Update workflow ([e7be94d](https://github.com/selemondev/svgl-svelte/commit/e7be94d))
+- Update scripts ([f2b4c50](https://github.com/selemondev/svgl-svelte/commit/f2b4c50))
+
+### ❤️ Contributors
+
+- Selemondev ([@selemondev](https://github.com/selemondev))
+- Selemon Brahanu ([@selemondev](https://github.com/selemondev))
+
 ## v0.0.3
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v0.0.2...v0.0.3)

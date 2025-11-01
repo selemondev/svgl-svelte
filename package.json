@@ -1,6 +1,6 @@
 {
 	"name": "@selemondev/svgl-svelte",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "An optimized package with SVG logos to be used as Svelte components ✨",
 	"author": "Selemondev",
 	"private": false,
