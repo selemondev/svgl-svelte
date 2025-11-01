@@ -5,7 +5,8 @@ import path from 'node:path';
 import fs from 'fs-extra';
 import type { Svgl } from '../src/lib/types/index';
 const regex =
-	/import type \{ iSVG \} from '@\/types\/svg';\s*export const svgs: iSVG\[\] = \[([\s\S]*)\]/;
+	/import\s+type\s+\{\s*iSVG\s*\}\s+from\s+["']@\/types\/svg["'];?\s*[\r\n]+export\s+const\s+svgs:\s*iSVG\[\]\s*=\s*\[([\s\S]*)\](?=\s*;?\s*(?:\r?\n|$))/;
+
 function extractAndCreateArray(sourceCode) {
 	const match = sourceCode.match(regex);
 	if (match && match[1]) {
