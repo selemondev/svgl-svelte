@@ -24,6 +24,7 @@ export { default as AnthropicLogo } from './components/Anthropic.svelte';
 export { default as ApacheKafkaLogo } from './components/ApacheKafka.svelte';
 export { default as ApidogLogo } from './components/Apidog.svelte';
 export { default as ApolloioLogo } from './components/Apolloio.svelte';
+export { default as AppStoreLogo } from './components/AppStore.svelte';
 export { default as AppleLogo } from './components/Apple.svelte';
 export { default as AppleMusicLogo } from './components/AppleMusic.svelte';
 export { default as AppwriteLogo } from './components/Appwrite.svelte';
