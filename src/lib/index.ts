@@ -447,7 +447,6 @@ export { default as SkypeLogo } from './components/Skype.svelte';
 export { default as SlackLogo } from './components/Slack.svelte';
 export { default as SnapchatLogo } from './components/Snapchat.svelte';
 export { default as SocketIOLogo } from './components/SocketIO.svelte';
-export { default as SocketioLogo } from './components/Socketio.svelte';
 export { default as SolanaLogo } from './components/Solana.svelte';
 export { default as SolderaLogo } from './components/Soldera.svelte';
 export { default as SolidityLogo } from './components/Solidity.svelte';
