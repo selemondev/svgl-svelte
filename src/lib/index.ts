@@ -346,6 +346,7 @@ export { default as OxcLogo } from './components/Oxc.svelte';
 export { default as PDFLogo } from './components/PDF.svelte';
 export { default as PM2Logo } from './components/PM2.svelte';
 export { default as PandaCSSLogo } from './components/PandaCSS.svelte';
+export { default as PaperLogo } from './components/Paper.svelte';
 export { default as ParcelLogo } from './components/Parcel.svelte';
 export { default as PatreonLogo } from './components/Patreon.svelte';
 export { default as PayPalLogo } from './components/PayPal.svelte';
