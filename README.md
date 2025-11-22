@@ -5,11 +5,10 @@
  </h1>
 </p>
 
-<!-- automd:badges color="green" license name="@selemondev/svgl-svelte" codecov bundlephobia packagephobia -->
-
+<!-- automd:badges color="green" license name="@selemondev/svgl-svelte" codecov packagephobia -->
+[![CI](https://github.com/selemondev/svgl-svelte/actions/workflows/ci.yml/badge.svg)](https://github.com/selemondev/svgl-svelte/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/@selemondev/svgl-svelte?color=green)](https://npmjs.com/package/@selemondev/svgl-svelte)
 [![npm downloads](https://img.shields.io/npm/dm/@selemondev/svgl-svelte?color=green)](https://npm.chart.dev/@selemondev/svgl-svelte)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@selemondev/svgl-svelte?color=green)](https://bundlephobia.com/package/@selemondev/svgl-svelte)
 [![install size](https://badgen.net/packagephobia/install/@selemondev/svgl-svelte?color=green)](https://packagephobia.com/result?p=@selemondev/svgl-svelte)
 
 <!-- /automd -->
