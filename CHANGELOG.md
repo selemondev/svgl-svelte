@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.0.2
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.1...v2.0.2)
+
+### 🏡 Chore
+
+- Add new component ([2cdde05](https://github.com/selemondev/svgl-svelte/commit/2cdde05))
+- **workflows:** Resolve  error ([69377c6](https://github.com/selemondev/svgl-svelte/commit/69377c6))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v1.1.0
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v0.0.3...v1.1.0)
