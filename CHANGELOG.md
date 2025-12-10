@@ -1,5 +1,26 @@
 # Changelog
 
+## v2.0.4
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.3...v2.0.4)
+
+### 🩹 Fixes
+
+- **update-svgl-component:** Workflow ([b0e52f0](https://github.com/selemondev/svgl-svelte/commit/b0e52f0))
+
+### 📖 Documentation
+
+- Add badges ([71a25ac](https://github.com/selemondev/svgl-svelte/commit/71a25ac))
+- Update badges ([281cfa7](https://github.com/selemondev/svgl-svelte/commit/281cfa7))
+
+### 🏡 Chore
+
+- Update svgl svelte components ([13c1742](https://github.com/selemondev/svgl-svelte/commit/13c1742))
+
+### ❤️ Contributors
+
+- Selemondev ([@selemondev](https://github.com/selemondev))
+
 ## v2.0.2
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.1...v2.0.2)
