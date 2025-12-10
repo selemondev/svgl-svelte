@@ -5,6 +5,10 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -99,23 +103,24 @@ jobs:
         if: steps.changes.outputs.has_changes == 'true' && steps.count.outputs.total != '0'
         uses: peter-evans/create-pull-request@v7
         with:
+          add-paths: |
+            src/lib/components/**
           branch: update-svgl-svelte-components
           branch-suffix: timestamp
           base: main
           title: 'chore: update svgl svelte components (added ${{ steps.count.outputs.total }} new components, took ${{ steps.duration.outputs.formatted }})'
           body: |
-            chore: update svgl svelte components
-
-            Added ${{ steps.count.outputs.total }} new components:
+            ## Updated Svgl Svelte Component(s)
+            
+            Added **${{ steps.count.outputs.total }}** new components: 
             ${{ steps.pretty.outputs.formatted }}
-
+            
             Generation time: ${{ steps.duration.outputs.formatted }}
-          commit-message: |
-            chore: update svgl svelte components
-
-            Added ${{ steps.count.outputs.total }} new components:
-            ${{ steps.pretty.outputs.formatted }}
-
-            Generation time: ${{ steps.duration.outputs.formatted }}
+          commit-message: | 
+           chore: update svgl svelte components 
+           
+           Added ${{ steps.count.outputs.total }} new components: ${{ steps.pretty.outputs.formatted }}
+           
+           Generation time: ${{ steps.duration.outputs.formatted }}
           delete-branch: true
           token: ${{ secrets.GITHUB_TOKEN }}
