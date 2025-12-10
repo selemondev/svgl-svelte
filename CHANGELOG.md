@@ -7,7 +7,7 @@
 ### 🏡 Chore
 
 - Add new component ([2cdde05](https://github.com/selemondev/svgl-svelte/commit/2cdde05))
-- **workflows:** Resolve  error ([69377c6](https://github.com/selemondev/svgl-svelte/commit/69377c6))
+- **workflows:** Resolve error ([69377c6](https://github.com/selemondev/svgl-svelte/commit/69377c6))
 
 ### ❤️ Contributors
 
