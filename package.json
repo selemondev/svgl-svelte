@@ -12,7 +12,7 @@
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"generate:components": "pnpm dlx esno scripts/index.ts && pnpm format",
-		"generate:release": "pnpm dlx changelogen@latest --release",
+		"generate:release": "pnpm dlx changelogen@latest --release && git push --follow-tags",
 		"prepack": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
