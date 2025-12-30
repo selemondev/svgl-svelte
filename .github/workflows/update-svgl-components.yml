@@ -111,16 +111,16 @@ jobs:
           title: 'chore: update svgl svelte components (added ${{ steps.count.outputs.total }} new components, took ${{ steps.duration.outputs.formatted }})'
           body: |
             ## Updated Svgl Svelte Component(s)
-            
+
             Added **${{ steps.count.outputs.total }}** new components: 
             ${{ steps.pretty.outputs.formatted }}
-            
+
             Generation time: ${{ steps.duration.outputs.formatted }}
-          commit-message: | 
-           chore: update svgl svelte components 
-           
-           Added ${{ steps.count.outputs.total }} new components: ${{ steps.pretty.outputs.formatted }}
-           
-           Generation time: ${{ steps.duration.outputs.formatted }}
+          commit-message: |
+            chore: update svgl svelte components 
+
+            Added ${{ steps.count.outputs.total }} new components: ${{ steps.pretty.outputs.formatted }}
+
+            Generation time: ${{ steps.duration.outputs.formatted }}
           delete-branch: true
           token: ${{ secrets.GITHUB_TOKEN }}

@@ -20,7 +20,7 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-        with: 
+        with:
           version: 10
 
       - name: Set node
