@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.0.7
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.6...v2.0.7)
+
+### 🏡 Chore
+
+- Add repository meta-data ([9186a7b](https://github.com/selemondev/svgl-svelte/commit/9186a7b))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v2.0.6
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.5...v2.0.6)
