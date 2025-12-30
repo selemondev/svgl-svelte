@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.0.5
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.4...v2.0.5)
+
+### 🏡 Chore
+
+- **package.json:** Update release script ([855c23f](https://github.com/selemondev/svgl-svelte/commit/855c23f))
+- Update svgl svelte components ([e153377](https://github.com/selemondev/svgl-svelte/commit/e153377))
+
+### ❤️ Contributors
+
+- Selemondev ([@selemondev](https://github.com/selemondev))
+
 ## v2.0.4
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.3...v2.0.4)
@@ -28,7 +41,7 @@
 ### 🏡 Chore
 
 - Add new component ([2cdde05](https://github.com/selemondev/svgl-svelte/commit/2cdde05))
-- **workflows:** Resolve  error ([69377c6](https://github.com/selemondev/svgl-svelte/commit/69377c6))
+- **workflows:** Resolve error ([69377c6](https://github.com/selemondev/svgl-svelte/commit/69377c6))
 
 ### ❤️ Contributors
 
