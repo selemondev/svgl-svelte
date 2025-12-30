@@ -36,11 +36,5 @@ jobs:
       - name: Build package
         run: pnpm build
 
-      - name: Generate changelog
-        run: pnpx changelogithub
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Publish to npm
         run: pnpm publish --access public --no-git-checks
