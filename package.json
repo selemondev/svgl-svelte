@@ -6,6 +6,10 @@
 	"private": false,
 	"license": "MIT",
 	"packageManager": "pnpm@10.20.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/selemondev/svgl-svelte.git"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "pnpm prepack",
