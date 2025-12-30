@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.0.8
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.7...v2.0.8)
+
+### 🏡 Chore
+
+- Remove changelog generation by changelogithub ([6da1c66](https://github.com/selemondev/svgl-svelte/commit/6da1c66))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v2.0.7
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.6...v2.0.7)
