@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.0.6
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.5...v2.0.6)
+
+### 🏡 Chore
+
+- Add OIDC permissions to workflow ([b4d057f](https://github.com/selemondev/svgl-svelte/commit/b4d057f))
+- Refactor release workflow ([1ae63d8](https://github.com/selemondev/svgl-svelte/commit/1ae63d8))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v2.0.5
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.4...v2.0.5)
