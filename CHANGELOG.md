@@ -1,5 +1,22 @@
 # Changelog
 
+## v2.1.0
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.8...v2.1.0)
+
+### 🚀 Enhancements
+
+- Add new  components ([ff66884](https://github.com/selemondev/svgl-svelte/commit/ff66884))
+
+### 🏡 Chore
+
+- Update svgl svelte components ([#31](https://github.com/selemondev/svgl-svelte/pull/31))
+- Update svgl svelte components ([#32](https://github.com/selemondev/svgl-svelte/pull/32))
+
+### ❤️ Contributors
+
+- Selemon Brahanu ([@selemondev](https://github.com/selemondev))
+
 ## v2.0.8
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.0.7...v2.0.8)
