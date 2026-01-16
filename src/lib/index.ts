@@ -541,6 +541,7 @@ export { default as ViteLogo } from './components/Vite.svelte';
 export { default as VitestLogo } from './components/Vitest.svelte';
 export { default as VivaldiLogo } from './components/Vivaldi.svelte';
 export { default as VoicemodLogo } from './components/Voicemod.svelte';
+export { default as VoidZeroLogo } from './components/VoidZero.svelte';
 export { default as VoltaLogo } from './components/Volta.svelte';
 export { default as VueLogo } from './components/Vue.svelte';
 export { default as VueUseLogo } from './components/VueUse.svelte';

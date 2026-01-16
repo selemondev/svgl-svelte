@@ -6,7 +6,7 @@
 
 ### 🚀 Enhancements
 
-- Add new  components ([ff66884](https://github.com/selemondev/svgl-svelte/commit/ff66884))
+- Add new components ([ff66884](https://github.com/selemondev/svgl-svelte/commit/ff66884))
 
 ### 🏡 Chore
 
