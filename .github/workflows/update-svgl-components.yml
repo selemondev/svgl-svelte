@@ -115,8 +115,8 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           add-paths: |
-            src/components/**
-            src/index.ts
+            src/lib/components/**
+            src/lib/index.ts
           branch: update-svgl-svelte-components
           branch-suffix: timestamp
           base: main
