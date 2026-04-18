@@ -51,8 +51,7 @@ jobs:
       - name: Count new Svelte components
         id: count
         run: |
-          # Check for untracked files (new components)
-          COUNT=$(git ls-files --others --exclude-standard 'src/lib/components/*.svelte' | wc -l)
+          COUNT=$(git ls-files --others --exclude-standard 'src/components/*.svelte' | wc -l)
           echo "total=$COUNT" >> $GITHUB_OUTPUT
 
       - name: Check if changes exist
@@ -74,7 +73,7 @@ jobs:
         if: steps.changes.outputs.has_changes == 'true' && steps.count.outputs.total != '0'
         id: list
         run: |
-          FILES=$(git ls-files --others --exclude-standard 'src/lib/components/*.svelte')
+          FILES=$(git ls-files --others --exclude-standard 'src/components/*.svelte')
           {
             echo "names<<EOF"
             for f in $FILES; do
@@ -99,28 +98,41 @@ jobs:
         if: steps.changes.outputs.has_changes == 'true'
         run: git checkout -- pnpm-lock.yaml
 
+      - name: Build PR title
+        if: steps.changes.outputs.has_changes == 'true' && steps.count.outputs.total != '0'
+        id: title
+        run: |
+          NAMES=$(echo "${{ steps.list.outputs.names }}" | paste -sd ', ' -)
+          COUNT=${{ steps.count.outputs.total }}
+          if [ "$COUNT" -le 3 ]; then
+            echo "text=feat: add $NAMES (${{ steps.duration.outputs.formatted }})" >> $GITHUB_OUTPUT
+          else
+            echo "text=feat: add $COUNT svgl components (${{ steps.duration.outputs.formatted }})" >> $GITHUB_OUTPUT
+          fi
+
       - name: Create Pull Request
         if: steps.changes.outputs.has_changes == 'true' && steps.count.outputs.total != '0'
         uses: peter-evans/create-pull-request@v7
         with:
           add-paths: |
-            src/lib/components/**
+            src/components/**
+            src/index.ts
           branch: update-svgl-svelte-components
           branch-suffix: timestamp
           base: main
-          title: 'chore: update svgl svelte components (added ${{ steps.count.outputs.total }} new components, took ${{ steps.duration.outputs.formatted }})'
+          title: ${{ steps.title.outputs.text }}
           body: |
             ## Updated Svgl Svelte Component(s)
 
-            Added **${{ steps.count.outputs.total }}** new components: 
+            Added **${{ steps.count.outputs.total }}** new components:
             ${{ steps.pretty.outputs.formatted }}
 
             Generation time: ${{ steps.duration.outputs.formatted }}
           commit-message: |
-            chore: update svgl svelte components 
+            feat: add ${{ steps.count.outputs.total }} svgl component(s)
 
-            Added ${{ steps.count.outputs.total }} new components: ${{ steps.pretty.outputs.formatted }}
+            ${{ steps.pretty.outputs.formatted }}
 
             Generation time: ${{ steps.duration.outputs.formatted }}
           delete-branch: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SVGL_SVELTE_AUTOMATION_TOKEN }}
