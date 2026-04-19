@@ -51,7 +51,7 @@ jobs:
       - name: Count new Svelte components
         id: count
         run: |
-          COUNT=$(git ls-files --others --exclude-standard 'src/components/*.svelte' | wc -l)
+          COUNT=$(git ls-files --others --exclude-standard 'src/lib/components/*.svelte' | wc -l)
           echo "total=$COUNT" >> $GITHUB_OUTPUT
 
       - name: Check if changes exist
@@ -73,7 +73,7 @@ jobs:
         if: steps.changes.outputs.has_changes == 'true' && steps.count.outputs.total != '0'
         id: list
         run: |
-          FILES=$(git ls-files --others --exclude-standard 'src/components/*.svelte')
+          FILES=$(git ls-files --others --exclude-standard 'src/lib/components/*.svelte')
           {
             echo "names<<EOF"
             for f in $FILES; do
