@@ -55,6 +55,7 @@
 		"@sveltejs/kit": "^2.57.1",
 		"@sveltejs/package": "^2.5.7",
 		"@sveltejs/vite-plugin-svelte": "^5.1.1",
+		"@types/fs-extra": "^11.0.4",
 		"@types/node": "^22.19.17",
 		"eslint": "^9.39.4",
 		"eslint-config-prettier": "^10.1.8",

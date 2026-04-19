@@ -4,10 +4,13 @@ import { componentTemplate } from '../src/lib/utils';
 import path from 'node:path';
 import fs from 'fs-extra';
 import type { Svgl } from '../src/lib/types/index';
+interface SpecialCase {
+  [key: string]: string
+}
 const regex =
 	/import\s+type\s+\{\s*iSVG\s*\}\s+from\s+["']@\/types\/svg["'];?\s*[\r\n]+export\s+const\s+svgs:\s*iSVG\[\]\s*=\s*\[([\s\S]*)\](?=\s*;?\s*(?:\r?\n|$))/;
 
-function extractAndCreateArray(sourceCode) {
+function extractAndCreateArray(sourceCode: string) {
 	const match = sourceCode.match(regex);
 	if (match && match[1]) {
 		const extractedContent = match[1].trim();
@@ -95,7 +98,7 @@ const getSvgUrl = (svgInfo: Svgl) => {
 const getFileUrlToPath = fileURLToPath(import.meta.url);
 const getRootPath = path.resolve(getFileUrlToPath, '..', '..');
 const targetDir = path.join(getRootPath, 'src', 'lib', 'components');
-const specialCases = {
+const specialCases: SpecialCase = {
 	'C#.svelte': 'CSharp',
 	'C++.svelte': 'CPlusPlus',
 	'CSS(New).svelte': 'CSSNew',
@@ -105,7 +108,7 @@ const sanitize = (fileName: string) => {
 	if (specialCases[fileName]) return specialCases[fileName];
 	return fileName.replace('.svelte', '').replace(/[^\w]/g, '');
 };
-async function createFiles(dirPath, file, content: string) {
+async function createFiles(dirPath: string, file: string, content: string) {
 	if (!fs.existsSync(dirPath)) {
 		fs.mkdirSync(dirPath, { recursive: true });
 	}
@@ -136,26 +139,26 @@ const exportFiles = async () => {
 		const getRootPath = process.cwd();
 
 		const svelteFiles = (await fs.readdir(targetDir))
-			.filter((f) => f.endsWith('.svelte'))
-			.map((file) => ({
+			.filter((f: string) => f.endsWith('.svelte'))
+			.map((file: string) => ({
 				name: path.basename(file, '.svelte'),
 				path: `./components/${file}`
 			}));
 
 		const utilsDir = path.join(getRootPath, 'src', 'lib', 'utils');
 		const utilFiles = (await fs.readdir(utilsDir))
-			.filter((file) => file.endsWith('.ts') && !file.endsWith('.d.ts') && file !== 'index.ts')
-			.map((file) => ({
+			.filter((file: string) => file.endsWith('.ts') && !file.endsWith('.d.ts') && file !== 'index.ts')
+			.map((file: string) => ({
 				name: path.basename(file, '.ts'),
 				path: `../utils/${file.replace('.ts', '.js')}`
 			}));
 
 		const svelteExports = svelteFiles
-			.map(({ name, path }) => `export { default as ${pascalCase(name)}Logo } from '${path}';`)
+			.map(({ name, path }: { name: string, path: string }) => `export { default as ${pascalCase(name)}Logo } from '${path}';`)
 			.join('\n');
 
 		const utilExports = utilFiles
-			.map(({ name }) => `export * as ${camelCase(name)} from './utils/${name}.js';`)
+			.map(({ name }: { name: string }) => `export * as ${camelCase(name)} from './utils/${name}.js';`)
 			.join('\n');
 
 		const typeExports = `export type * from './types/index.js';`;
