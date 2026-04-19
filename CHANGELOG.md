@@ -1,5 +1,36 @@
 # Changelog
 
+## v2.3.0
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.1.2...v2.3.0)
+
+### 🚀 Enhancements
+
+- Add Tag workflow and update workflow path targets ([f97e879](https://github.com/selemondev/svgl-svelte/commit/f97e879))
+- Add auto-merge workflow ([69eed92](https://github.com/selemondev/svgl-svelte/commit/69eed92))
+- Add 1 svgl component(s) ([2e2cc60](https://github.com/selemondev/svgl-svelte/commit/2e2cc60))
+
+### 💅 Refactors
+
+- Update-svgl-components workflow ([3b34d96](https://github.com/selemondev/svgl-svelte/commit/3b34d96))
+- Update-svgl-components workflow ([a7bf84c](https://github.com/selemondev/svgl-svelte/commit/a7bf84c))
+
+### 🏡 Chore
+
+- Update svgl svelte components ([795a197](https://github.com/selemondev/svgl-svelte/commit/795a197))
+- Update svgl svelte components ([aa19458](https://github.com/selemondev/svgl-svelte/commit/aa19458))
+- Add provenance flag to release workflow ([bb0f0fe](https://github.com/selemondev/svgl-svelte/commit/bb0f0fe))
+- Update CI ([a8f0eb4](https://github.com/selemondev/svgl-svelte/commit/a8f0eb4))
+- Set up Dependabot for npm and GitHub Actions ([237826f](https://github.com/selemondev/svgl-svelte/commit/237826f))
+- **release:** V2.2.0 ([9e26e6b](https://github.com/selemondev/svgl-svelte/commit/9e26e6b))
+- Update deps ([545f137](https://github.com/selemondev/svgl-svelte/commit/545f137))
+- Resolve typescript type errors ([6db9893](https://github.com/selemondev/svgl-svelte/commit/6db9893))
+
+### ❤️ Contributors
+
+- Selemondev ([@selemondev](https://github.com/selemondev))
+- Selemon Brahanu ([@selemondev](https://github.com/selemondev))
+
 ## v2.2.0
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.1.2...v2.2.0)
