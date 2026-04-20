@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 416" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 416" width="${width}" height="${height}" ${restAttrs}>
   <defs>
     <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="a">
       <stop stop-color="#4F4F4F" offset="0%"/>
@@ -28,6 +29,7 @@
   <path d="M0 352v-96c0 8 256 24 256 64v96c0-40-256-56-256-64" fill="url(#b)" transform="matrix(1 0 0 -1 0 672)"/>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `
 <svg id="katman_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 841.9 595.3" width="${width}" height="${height}" ${restAttrs}>
   <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
   <defs>
@@ -278,6 +279,7 @@
     <path class="st10" d="M438.6,293.4l-12.7,25.4,120.5,69.8,12.7-25.4-120.5-69.8ZM422.7,269.8c-2-1.1-4.4-1.1-6.3,0l-21.1,12.2c-2,1.1-3.2,3.2-3.2,5.5v24.4c0,2.3,1.2,4.4,3.2,5.5l21.1,12.2c2,1.1,4.4,1.1,6.3,0l21.1-12.2c2-1.1,3.2-3.2,3.2-5.5v-24.4c0-2.3-1.2-4.4-3.2-5.5l-21.1-12.2ZM411.6,163.4c7.9-4.5,17.5-4.5,25.4,0l98.2,56.7c7.9,4.5,12.7,12.9,12.7,22v113.4c0,9.1-4.8,17.4-12.7,22l-98.2,56.7c-7.9,4.5-17.5,4.5-25.4,0l-98.2-56.7c-7.9-4.5-12.7-12.9-12.7-22v-113.4c0-9.1,4.8-17.4,12.7-22l98.2-56.7ZM395.7,135.2l-103.1,59.5c-15.7,9.1-25.4,25.8-25.4,44v119c0,18.1,9.7,34.9,25.4,44l103.1,59.5c15.7,9.1,35,9.1,50.8,0l103.1-59.5c15.7-9.1,25.4-25.8,25.4-44v-119c0-18.1-9.7-34.9-25.4-44l-103.1-59.5c-15.7-9.1-35-9.1-50.8,0Z"/>
   </g>
 </svg>`;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" viewBox="0 0 48 48" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" viewBox="0 0 48 48" width="${width}" height="${height}" ${restAttrs}>
   <defs>
     <path id="s" fill="#2e3436" fill-rule="evenodd" stroke="#000" stroke-miterlimit="10" stroke-width="1.17391276" d="M24.041631 21.837049a2.2980971 2.2980971 0 1 1-4.596194 0 2.2980971 2.2980971 0 1 1 4.596194 0z" overflow="visible" style="marker:none"/>
     <path id="u" fill="#fff" fill-rule="evenodd" d="M23.157747 20.953165a1.767767 1.767767 0 1 1-3.535534 0 1.767767 1.767767 0 1 1 3.535534 0z" overflow="visible" style="marker:none"/>
@@ -107,6 +108,7 @@
     <path fill="url(#B)" fill-rule="evenodd" d="M23.003067 31.736544c1.497372.143092 2.849629-.272213 3.411893-.474047.098225-.555386.536552-1.621257 2.046088-1.691468l-.53033-.928077s-1.966641 1.347921-4.065864 1.745669l-.861787 1.347923z" overflow="visible" style="marker:none"/>
   </g>
 </svg>`;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

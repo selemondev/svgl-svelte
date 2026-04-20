@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
 <g clip-path="url(#clip0_2272_2527)">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7987 29.4147L14.2387 39.0947C15.5813 39.5627 16.9547 39.8747 18.36 40V34.848H21.6387V40C23.044 39.8747 24.4493 39.5627 25.8227 39.0947L22.2627 29.4147C21.5133 27.3533 18.5787 27.3533 17.7973 29.4147H17.7987Z" fill="#02353C" style="fill:#02353C;fill:color(display-p3 0.0078 0.2078 0.2353);fill-opacity:1;"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M25.1053 28.228L29.4453 37.596C30.7253 36.972 31.944 36.2227 33.0053 35.316L29.352 31.6627L31.6933 29.3213L35.3467 32.9747C36.252 31.8813 37.0333 30.664 37.6573 29.384L28.2893 25.044C26.2907 24.1067 24.2307 26.2 25.136 28.1973L25.1053 28.228Z" fill="#02353C" style="fill:#02353C;fill:color(display-p3 0.0078 0.2078 0.2353);fill-opacity:1;"/>
@@ -28,6 +29,7 @@
 </defs>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

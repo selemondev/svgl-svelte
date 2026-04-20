@@ -21,7 +21,7 @@ This package is powered by the official [`pheralb/svgl`](https://github.com/pher
 ## ✨ Features
 
 - 💪 Fully typed Svelte components.
-- 🍃 Tree-shakable — only what you use will be bundled.
+- 🍃 Tree-shakable: Only what you use will be bundled.
 
 ## 📦 Installation
 
@@ -41,10 +41,10 @@ Visit the [Svgl logos](https://svgl.app/) page to explore the available Svgl log
 
 ```html
 <script lang="ts">
-	import { SvelteLogo } from '@selemondev/svgl-svelte';
+	import { SvglSvelteLogo } from '@selemondev/svgl-svelte';
 </script>
 
-<SvelteLogo height="{200}" width="{200}" />
+<SvglSvelteLogo height="{200}" width="{200}" />
 ```
 
 ## ©️ Eco-system

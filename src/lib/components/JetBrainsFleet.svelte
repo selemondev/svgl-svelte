@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 70 70" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 70 70" width="${width}" height="${height}" ${restAttrs}>
   <defs>
     <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(22.35433 -20.58122 27.17129 29.51214 38.648 42.538)" gradientUnits="userSpaceOnUse">
       <stop offset=".771" stop-color="#001AFF"/>
@@ -60,6 +61,7 @@
   <path fill="url(#h)" d="M56.651 39.682c1.658 7.764-6.511 16.089-18.246 18.594-11.734 2.505-22.59-1.757-24.248-9.52-1.658-7.764 6.511-16.089 18.246-18.594 11.734-2.506 22.59 1.757 24.248 9.52z"/>
   <path fill="#D6F8F8" fill-opacity=".19" fill-rule="evenodd" d="M51.462 49.883c3.074-3.133 4.386-6.66 3.698-9.882-.688-3.223-3.326-5.907-7.411-7.51-4.073-1.6-9.412-2.037-15.028-.838-5.616 1.199-10.31 3.779-13.375 6.901-3.074 3.133-4.386 6.66-3.698 9.883.688 3.223 3.326 5.906 7.412 7.51 4.072 1.6 9.41 2.037 15.027.838 5.616-1.2 10.31-3.779 13.375-6.902zm-13.057 8.393c11.735-2.505 19.904-10.83 18.246-18.594-1.658-7.763-12.514-12.026-24.248-9.52-11.735 2.505-19.904 10.83-18.246 18.593 1.658 7.764 12.514 12.026 24.248 9.521z" clip-rule="evenodd"/>
 </svg>`;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

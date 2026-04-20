@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg 
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg 
 xmlns="http://www.w3.org/2000/svg" 
 viewBox="0 0 48 48" width="${width}" height="${height}" ${restAttrs}>
 <path 
@@ -32,6 +33,7 @@ stroke-linecap="round"
 stroke-linejoin="round" 
 d="M24 16.573L34.27 27.01v14.407L24 31.073"/>
 </svg> `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}
