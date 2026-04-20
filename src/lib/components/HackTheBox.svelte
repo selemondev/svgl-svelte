@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `
 <!-- Generator: Adobe Illustrator 24.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1024 791.27002" style="enable-background:new 0 0 1024 791.27002;" xml:space="preserve" width="${width}" height="${height}" ${restAttrs}>
@@ -44,6 +45,7 @@
 	c4.92072-2.84094,11.07153,0.71024,11.07153,6.39215V478.08124z"/>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

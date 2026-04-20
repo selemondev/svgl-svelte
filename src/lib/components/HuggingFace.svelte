@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 95 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 95 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${width}" height="${height}" ${restAttrs}>
  <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
  <title>
   icon
@@ -77,6 +78,7 @@
   </g>
  </g>
 </svg>`;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

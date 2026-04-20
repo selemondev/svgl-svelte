@@ -1,5 +1,66 @@
 # Changelog
 
+## v2.5.1
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.5.0...v2.5.1)
+
+### 🩹 Fixes
+
+- Merge conflicts ([e039c9d](https://github.com/selemondev/svgl-svelte/commit/e039c9d))
+- Resolve vite-plugin-svelte warnings regarding closures ([0cf692e](https://github.com/selemondev/svgl-svelte/commit/0cf692e))
+
+### 🏡 Chore
+
+- **release:** V2.4.0 ([70f7065](https://github.com/selemondev/svgl-svelte/commit/70f7065))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
+## v2.5.0
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.3.0...v2.5.0)
+
+### 🚀 Enhancements
+
+- Add docs and update CI workflow ([0cc5c09](https://github.com/selemondev/svgl-svelte/commit/0cc5c09))
+- Add Svgl prefix ([2db2f70](https://github.com/selemondev/svgl-svelte/commit/2db2f70))
+
+### 📖 Documentation
+
+- Update README.md file ([8e0c481](https://github.com/selemondev/svgl-svelte/commit/8e0c481))
+- Update usage example ([81401a3](https://github.com/selemondev/svgl-svelte/commit/81401a3))
+
+### 🏡 Chore
+
+- **breaking-change:** Regenerate components with new export syntax ([c37fdf1](https://github.com/selemondev/svgl-svelte/commit/c37fdf1))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
+## v2.4.0
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.3.0...v2.4.0)
+
+### 🚀 Enhancements
+
+- Add docs and update CI workflow ([0cc5c09](https://github.com/selemondev/svgl-svelte/commit/0cc5c09))
+- Add Svgl prefix ([2db2f70](https://github.com/selemondev/svgl-svelte/commit/2db2f70))
+
+### 📖 Documentation
+
+- Update README.md file ([8e0c481](https://github.com/selemondev/svgl-svelte/commit/8e0c481))
+- Update usage example ([81401a3](https://github.com/selemondev/svgl-svelte/commit/81401a3))
+
+### 🏡 Chore
+
+- **breaking-change:** Regenerate components with new export syntax ([c37fdf1](https://github.com/selemondev/svgl-svelte/commit/c37fdf1))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v2.3.0
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.1.2...v2.3.0)

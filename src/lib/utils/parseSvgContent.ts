@@ -24,9 +24,11 @@ export const parseSvgContent = (content: string) => {
   }
 
   let { width = 50, height = 50, ...rest }: Props = $props();
-  const restAttrs = Object.entries(rest).map(([k, v]) => \`\${k}="\${v}"\`).join(' ');
-  const svgContent = \`${content}\`;
+  const svgContent = () => {
+	const restAttrs = Object.entries(rest).map(([k, v]) => \`\${k}="\${v}"\`).join(' ');
+	return \`${content}\`;
+  };
 </script>`,
-		templateContent: '{@html svgContent}'
+		templateContent: '{@html svgContent()}'
 	};
 };

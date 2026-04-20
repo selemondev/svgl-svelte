@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 300 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 300 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" width="${width}" height="${height}" ${restAttrs}>
     <g>
         <path d="M250,120C255.519,120 260,124.481 260,130C260,135.519 255.519,140 250,140C244.481,140 240,135.519 240,130C240,124.481 244.481,120 250,120Z" style="fill:rgb(226,183,20);fill-rule:nonzero;"/>
         <path d="M110,120L170,120C175.519,120 180,124.481 180,130C180,135.519 175.519,140 170,140L110,140C104.481,140 100,135.519 100,130C100,124.481 104.481,120 110,120Z" style="fill:rgb(226,183,20);fill-rule:nonzero;"/>
@@ -24,6 +25,7 @@
     </g>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

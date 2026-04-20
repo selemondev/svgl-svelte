@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8" width="${width}" height="${height}" ${restAttrs}> <rect x="28" y="156" width="88" height="24" rx="12" fill="#8964e8">
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8" width="${width}" height="${height}" ${restAttrs}> <rect x="28" y="156" width="88" height="24" rx="12" fill="#8964e8">
 </rect> <rect x="104" y="120" width="36" height="24" rx="12" fill="#17b877">
 </rect> <rect x="56" y="120" width="36" height="24" rx="12" fill="#17b877">
 </rect> <rect x="84" y="84" width="52" height="24" rx="12" fill="#ffa23e">
@@ -19,6 +20,7 @@
 </rect> <rect x="64" y="12" width="52" height="24" rx="12" fill="#8964e8">
 </rect> <rect x="28" y="12" width="24" height="24" rx="12" fill="#8964e8">
 </rect> </svg>`;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

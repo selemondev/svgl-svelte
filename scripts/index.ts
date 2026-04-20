@@ -158,7 +158,7 @@ const exportFiles = async () => {
 		const svelteExports = svelteFiles
 			.map(
 				({ name, path }: { name: string; path: string }) =>
-					`export { default as ${pascalCase(name)}Logo } from '${path}';`
+					`export { default as ${name === 'Svgl' ? 'Svgl' : `Svgl${pascalCase(name)}`}Logo } from '${path}';`
 			)
 			.join('\n');
 

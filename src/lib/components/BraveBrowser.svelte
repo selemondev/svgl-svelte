@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `
 <svg viewBox="0 0 256 301" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="${width}" height="${height}" ${restAttrs}>
     <defs>
         <linearGradient x1="0%" y1="50.017894%" x2="100.096998%" y2="50.017894%" id="linearGradient-1">
@@ -35,6 +36,7 @@
 	</g>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

@@ -6,38 +6,39 @@ import UIContainer from '@components/ui/ui-container.astro'
 import TwitterIcon from '@components/ui/twitter-icon.astro'
 import GithubIcon from '@components/ui/github-icon.astro'
 import {
-  VercelLogo,
-  RaycastLogo,
-  CodexLogo,
-  AnthropicLogo,
-  StripeLogo,
-  ViteLogo,
-  MintlifyLogo,
-  CursorLogo,
-  RspackLogo,
-  GhosttyLogo,
-  BoltLogo,
-  BlueskyLogo,
-  RaspberryPILogo,
-  ElysiaJSLogo,
-  VitestLogo,
-  RemixLogo,
-  HonoLogo,
-  QwikLogo,
-  FreshLogo,
-  PostHogLogo,
-  GoogleMapsLogo,
-  SafariLogo,
-  GoogleMeetLogo,
-  GitHubLogo,
-  ClerkLogo,
-  StackOverflowLogo
+  SvglVercelLogo,
+  SvglRaycastLogo,
+  SvglCodexLogo,
+  SvglAnthropicLogo,
+  SvglStripeLogo,
+  SvglViteLogo,
+  SvglMintlifyLogo,
+  SvglCursorLogo,
+  SvglRspackLogo,
+  SvglGhosttyLogo,
+  SvglBoltLogo,
+  SvglBlueskyLogo,
+  SvglRaspberryPILogo,
+  SvglElysiaJSLogo,
+  SvglVitestLogo,
+  SvglRemixLogo,
+  SvglHonoLogo,
+  SvglQwikLogo,
+  SvglFreshLogo,
+  SvglPostHogLogo,
+  SvglGoogleMapsLogo,
+  SvglSafariLogo,
+  SvglGoogleMeetLogo,
+  SvglGitHubLogo,
+  SvglClerkLogo,
+  SvglStackOverflowLogo
 } from '@selemondev/svgl-svelte'
+
 const installCmd = `<script lang="ts">
-  import { SvelteLogo } from '@selemondev/svgl-svelte';
+  import { SvelteLogo as SvglSvelteLogo } from '@selemondev/svgl-svelte';
 </script>
 
-<SvelteLogo height={200} width={200} />`
+<SvglSvelteLogo height={200} width={200} />`
 ---
 
 <html lang="en">
@@ -78,36 +79,36 @@ const installCmd = `<script lang="ts">
       <div class="py-4 flex flex-col space-y-8 w-80 md:w-xl">
         <Marquee fade>
           <div class="flex items-center space-x-6">
-            <VercelLogo />
-            <RaycastLogo />
-            <CodexLogo />
-            <AnthropicLogo />
-            <StripeLogo />
-            <ViteLogo />
-            <MintlifyLogo />
-            <CursorLogo />
-            <RspackLogo />
-            <GhosttyLogo />
-            <BoltLogo />
-            <BlueskyLogo />
-            <RaspberryPILogo />
+            <SvglVercelLogo />
+            <SvglRaycastLogo />
+            <SvglCodexLogo />
+            <SvglAnthropicLogo />
+            <SvglStripeLogo />
+            <SvglViteLogo />
+            <SvglMintlifyLogo />
+            <SvglCursorLogo />
+            <SvglRspackLogo />
+            <SvglGhosttyLogo />
+            <SvglBoltLogo />
+            <SvglBlueskyLogo />
+            <SvglRaspberryPILogo />
           </div>
         </Marquee>
         <Marquee fade reverse>
           <div class="flex items-center space-x-6">
-            <ElysiaJSLogo />
-            <VitestLogo />
-            <RemixLogo />
-            <StackOverflowLogo />
-            <HonoLogo />
-            <QwikLogo />
-            <GitHubLogo />
-            <ClerkLogo />
-            <FreshLogo />
-            <PostHogLogo />
-            <GoogleMapsLogo />
-            <SafariLogo />
-            <GoogleMeetLogo />
+            <SvglElysiaJSLogo />
+            <SvglVitestLogo />
+            <SvglRemixLogo />
+            <SvglStackOverflowLogo />
+            <SvglHonoLogo />
+            <SvglQwikLogo />
+            <SvglGitHubLogo />
+            <SvglClerkLogo />
+            <SvglFreshLogo />
+            <SvglPostHogLogo />
+            <SvglGoogleMapsLogo />
+            <SvglSafariLogo />
+            <SvglGoogleMeetLogo />
           </div>
         </Marquee>
       </div>

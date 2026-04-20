@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 355" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 355" width="${width}" height="${height}" ${restAttrs}>
   <path d="M195 260c-11 9-20 23-31 32 5 26-4 37 7 46 4 3 29 10 43 2 0-13-7-17-14-22-8-16-5-42-6-58" fill="#2E93EE"/>
   <path d="M200 344c-1-8-7-14-14-17 6 4 9 10 9 17h5ZM212 341c-1-7-7-13-14-16 8 5 10 11 9 18l5-2Z" fill="#2E578B"/>
   <path d="M183 128c-5 8-8 24 34 47 0 0-18 30-23 35-6 6-9 21-4 28l10 11s13 2 19-1c7-8 9-20 4-30 0 0 35-36 33-47s-57-67-73-43Z" fill="#2E93EE"/>
@@ -41,6 +42,7 @@
   <path d="M200 84c4-1 7 4 2 6-1 2 0 4 3 4-3 2-6 1-7-2-2-3-1-7 2-8M242 82c-3-1-5 3-1 5 0 2-1 3-3 4 8 2 8-7 4-9" fill="#ECA93F"/>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

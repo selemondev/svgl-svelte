@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 950 950" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 950 950" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
   <circle cx="475" cy="475" r="425" fill="white"/>
   <path d="M308 308.2C308 262.25 345.25 225 391.2 225H658V343.4C658 366.375 639.375 385 616.4 385H508C485.909 385 468 402.909 468 425V683.4C468 706.375 449.375 725 426.4 725H308V308.2Z" fill="#001B38"/>
   <circle cx="509" cy="426" r="108" transform="rotate(90 509 426)" fill="url(#paint0_linear)"/>
@@ -27,6 +28,7 @@
   </defs>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}
