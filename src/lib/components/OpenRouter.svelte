@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg
   viewBox="0 0 512 512"
   xmlns="http://www.w3.org/2000/svg"
   fill="#111111"
@@ -30,6 +31,7 @@
   </g>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

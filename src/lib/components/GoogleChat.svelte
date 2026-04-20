@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 96 100" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 96 100" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
 <g clip-path="url(#clip0_101_6)">
 <path d="M21.76 53.94V21.44H7.56C3.38 21.44 0 24.84 0 29.02V96.2C0 99.58 4.08 101.26 6.46 98.88L22.08 83.26H66.56C70.74 83.26 74.12 79.88 74.12 75.7V61.5H29.34C25.16 61.5 21.76 58.12 21.76 53.94Z" fill="#00AC47"/>
 <path d="M88.32 0H29.34C25.16 0 21.78 3.38 21.78 7.56V21.44H66.56C70.74 21.44 74.12 24.82 74.12 29V61.48H88.32C92.5 61.48 95.88 58.1 95.88 53.92V7.56C95.88 3.38 92.5 0 88.32 0Z" fill="#5BB974"/>
@@ -23,6 +24,7 @@
 </defs>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

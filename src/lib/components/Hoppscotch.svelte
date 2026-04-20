@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 748 500" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 748 500" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
 <path opacity="0.6" d="M481.331 472.1C421.32 505.511 348.373 509.578 283.502 480.696C218.63 451.813 172.793 394.821 157.484 327.914C202.775 356.592 256.119 384.752 314.622 410.799C373.125 436.846 429.682 457.617 481.331 472.1Z" fill="#00B381"/>
 <path d="M403.097 313.899C395.621 330.69 372.61 336.755 351.7 327.446C330.791 318.136 319.9 296.977 327.376 280.185C334.852 263.394 357.864 257.329 378.773 266.638C399.683 275.948 410.573 297.107 403.097 313.899Z" fill="url(#paint0_linear_193_425)"/>
 <path d="M403.097 313.899C395.621 330.69 372.61 336.755 351.7 327.446C330.791 318.136 319.9 296.977 327.376 280.185C334.852 263.394 357.864 257.329 378.773 266.638C399.683 275.948 410.573 297.107 403.097 313.899Z" fill="url(#paint1_radial_193_425)" style="mix-blend-mode:soft-light"/>
@@ -56,6 +57,7 @@
 </defs>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

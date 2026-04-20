@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 152 152" xml:space="preserve" width="${width}" height="${height}" ${restAttrs}>
 <desc>Created with Fabric.js 3.6.6</desc>
@@ -23,6 +24,7 @@
 <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"  transform=" translate(-73.35, -326.01)" d="M 58.6 322 l 60.8 -35.4 c 1.3 -0.8 1.4 -3.1 -0.1 -3.9 c -1.5 -0.8 -4.2 -2.4 -5.3 -3 c -1.5 -0.8 -3.2 -0.8 -4.7 0.1 c -0.7 0.4 -49.3 28.7 -51 29.6 c -1.9 1.1 -4.4 1.1 -6.3 0 l -25.7 -15.1 v 12.8 c 6.2 3.7 21.8 12.8 25.6 15 C 54.2 323.3 56.4 323.3 58.6 322 M 58.6 346.2 l 60.8 -35.4 c 1.3 -0.8 1.4 -3.1 -0.1 -3.9 c -1.5 -0.8 -4.2 -2.4 -5.3 -3 c -1.5 -0.8 -3.2 -0.8 -4.7 0.1 c -0.7 0.4 -49.3 28.7 -51 29.6 c -1.9 1.1 -4.4 1.1 -6.3 0 l -25.7 -15.1 v 12.8 c 6.2 3.7 21.8 12.8 25.6 15 C 54.2 347.5 56.4 347.5 58.6 346.2 M 58.6 372 l 60.8 -35.4 c 1.3 -0.8 1.4 -3.1 -0.1 -3.9 c -1.5 -0.8 -4.2 -2.4 -5.3 -3 c -1.5 -0.8 -3.2 -0.8 -4.7 0.1 c -0.7 0.4 -49.3 28.7 -51 29.6 c -1.9 1.1 -4.4 1.1 -6.3 0 l -25.7 -15.1 V 357 c 6.2 3.7 21.8 12.8 25.6 15 C 54.2 373.2 56.4 373.2 58.6 372" stroke-linecap="round" />
 </g>
 </svg>`;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

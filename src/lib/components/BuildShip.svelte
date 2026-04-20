@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M18 12C18 8.13401 21.134 5 25 5C28.866 5 32 8.13401 32 12C32 15.866 28.866 19 25 19V15C26.6569 15 28 13.6569 28 12C28 10.3431 26.6569 9 25 9C23.3431 9 22 10.3431 22 12H18Z" fill="url(#paint0_linear_1898_1050)"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M32 12C32 15.866 28.866 19 25 19H22V15H25C26.6569 15 28 13.6569 28 12H32Z" fill="url(#paint1_linear_1898_1050)"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M25 5C28.866 5 32 8.13401 32 12H28C28 10.3431 26.6569 9 25 9V5Z" fill="url(#paint2_linear_1898_1050)"/>
@@ -61,6 +62,7 @@
 </defs>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

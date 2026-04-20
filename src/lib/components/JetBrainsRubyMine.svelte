@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 105" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 105" width="${width}" height="${height}" ${restAttrs}>
   <linearGradient id="a" x1="65.05" x2="52.91" y1="60.03" y2="28.18" gradientUnits="userSpaceOnUse">
     <stop offset="0" stop-color="#fe2857"/>
     <stop offset=".06" stop-color="#fe3052"/>
@@ -39,6 +40,7 @@
   <path d="M22.5 22.5h60v60h-60z"/>
   <path fill="#fff" d="M29.98 71.16h22.5v3.75h-22.5zm22.23-41.19h5.35l5.93 9.54 5.93-9.54h5.35v22.55h-4.93V37.8l-6.35 9.63h-.13l-6.28-9.53v14.62h-4.87zM30 30h10.3q4.28 0 6.56 2.28a7 7 0 0 1 1.93 5.15v.07a7 7 0 0 1-1.34 4.45 7.74 7.74 0 0 1-3.49 2.53l5.51 8h-5.8L39 45.57h-4.09v6.92H30zm10 10.91a4.12 4.12 0 0 0 2.77-.91 3 3 0 0 0 1-2.32v-.06a2.85 2.85 0 0 0-1-2.41 4.53 4.53 0 0 0-2.86-.81h-4.98v6.47z"/>
 </svg>`;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

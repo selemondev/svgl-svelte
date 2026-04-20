@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256" width="${width}" height="${height}" ${restAttrs}>
   <defs>
     <linearGradient x1="90.8%" y1="81.8%" x2="-19.1%" y2="19%" id="a">
       <stop stop-color="#DD1265" offset="0%"/>
@@ -34,6 +35,7 @@
   <path d="M68 178h60v10H68v-10Zm0-109.9h27.5a24 24 0 0 1 17.5 6.1c3.3 3.5 5.2 8.2 5.2 13v1c.4 8.4-5 16-13 18.6l14.8 21.5h-15.5L91.6 109H81.3v19.3H68V68Zm26.7 29.3c6.2 0 9.9-3.2 10.1-8v-.6c0-5.7-4-8.6-10.4-8.6h-13v17.2h13.3ZM129 68.1h23.5c18.6 0 31.6 12.6 32 29.1v1c0 17-13 30-32 30h-23.5v-60Zm13.4 12v36.2h10.2A17.1 17.1 0 0 0 171 99.1v-1a17.3 17.3 0 0 0-18.2-18h-10.2Z" fill="#FFF"/>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

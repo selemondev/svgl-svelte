@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1200 1200" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1200 1200" width="${width}" height="${height}" ${restAttrs}>
   <path fill="#F14A16" d="M635.473 1187.57s-24.685-29.53-24.685-85.37h-21.356c0 55.84-24.698 85.37-24.698 85.37"/>
   <mask id="poper-favicon__a" width="148" height="137" x="526" y="1063" maskUnits="userSpaceOnUse" style="mask-type:luminance">
     <path fill="#fff" d="M526.618 1063.72h147.118V1200H526.618v-136.28Z"/>
@@ -41,6 +42,7 @@
   <path fill="#fff" d="M640.161 253.895c59.045 0 106.997 19.738 143.856 59.188 36.887 39.423 55.33 90.745 55.33 153.953 0 62.714-18.056 113.408-54.153 152.083-36.072 38.649-83.903 57.96-143.483 57.96-66.93 0-116.085-25.08-147.438-75.267v224.145h-90.184v-568.91h90.184v72.115c31.353-50.173 79.987-75.267 145.888-75.267ZM529.93 562.282c23.802 25.32 54.26 37.981 91.36 37.981 37.127 0 67.585-12.661 91.361-37.981 23.802-25.347 35.71-58.133 35.71-98.344 0-39.169-11.908-71.421-35.71-96.742-23.776-25.347-54.234-38.034-91.361-38.034-37.1 0-67.558 12.687-91.36 38.034-23.776 25.321-35.657 57.573-35.657 96.742 0 40.211 11.881 72.997 35.657 98.344Z"/>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

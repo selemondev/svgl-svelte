@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.98489 511.98489" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.98489 511.98489" width="${width}" height="${height}" ${restAttrs}>
   <defs>
     <linearGradient xlink:href="#a" id="f" x1=".46521288" x2=".5565635" y1="-.67390651" y2=".81129867" gradientTransform="matrix(231.62575 0 0 231.62472 111.11013 159.99363)" gradientUnits="userSpaceOnUse"/>
     <linearGradient id="a">
@@ -39,6 +40,7 @@
   <path fill="#fff" d="M383.99094 255.99433c0 70.69003-57.30741 127.99717-127.99775 127.99717-70.69034 0-127.99773-57.30714-127.99773-127.99717 0-70.69002 57.30739-127.99716 127.99773-127.99716s127.99775 57.30714 127.99775 127.99716"/>
   <path fill="url(#h)" d="M359.99158 255.99433c0 57.43565-46.56249 103.99794-103.99839 103.99794-57.4359 0-103.9984-46.56229-103.9984-103.99794 0-57.43564 46.5625-103.99793 103.9984-103.99793 57.4359 0 103.99839 46.56229 103.99839 103.99793"/>
 </svg>`;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

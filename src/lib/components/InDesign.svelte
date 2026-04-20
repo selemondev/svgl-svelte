@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 83 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 83 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
 <g clip-path="url(#clip0_906_1830)">
 <path d="M67.5214 0H14.5299C6.50526 0 0 6.50526 0 14.5299V65.4701C0 73.4947 6.50526 80 14.5299 80H67.5214C75.546 80 82.0513 73.4947 82.0513 65.4701V14.5299C82.0513 6.50526 75.546 0 67.5214 0Z" fill="#49021F"/>
 <path d="M29.7977 20.9286V55.9908C29.7977 56.3581 29.6326 56.5415 29.3024 56.5413H22.6421C22.3481 56.5413 22.2014 56.3578 22.2019 55.9908V20.9286C22.2019 20.6353 22.367 20.4885 22.6972 20.4882H29.3574C29.4172 20.4797 29.4781 20.4853 29.5355 20.5044C29.5928 20.5235 29.6448 20.5557 29.6875 20.5984C29.7303 20.6412 29.7625 20.6932 29.7816 20.7505C29.8007 20.8078 29.8062 20.8688 29.7977 20.9286Z" fill="#FF3366"/>
@@ -23,6 +24,7 @@
 </defs>
 </svg>
 `;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}

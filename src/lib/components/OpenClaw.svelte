@@ -7,10 +7,11 @@
 	}
 
 	let { width = 50, height = 50, ...rest }: Props = $props();
-	const restAttrs = Object.entries(rest)
-		.map(([k, v]) => `${k}="${v}"`)
-		.join(' ');
-	const svgContent = `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
+	const svgContent = () => {
+		const restAttrs = Object.entries(rest)
+			.map(([k, v]) => `${k}="${v}"`)
+			.join(' ');
+		return `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" ${restAttrs}>
   <defs>
     <linearGradient id="lobster-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ff4d4d"/>
@@ -32,6 +33,7 @@
   <circle cx="46" cy="34" r="2.5" fill="#00e5cc"/>
   <circle cx="76" cy="34" r="2.5" fill="#00e5cc"/>
 </svg>`;
+	};
 </script>
 
-{@html svgContent}
+{@html svgContent()}
