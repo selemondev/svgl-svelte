@@ -4,3 +4,7 @@ pnpm-lock.yaml
 yarn.lock
 bun.lock
 bun.lockb
+
+# Generated
+.astro
+www/docs/.astro

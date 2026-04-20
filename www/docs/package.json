@@ -1,0 +1,29 @@
+{
+	"name": "docs",
+	"type": "module",
+	"version": "0.0.1",
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/svelte": "^8.0.5",
+		"@selemondev/svgl-svelte": "workspace:*",
+		"@tailwindcss/vite": "^4.2.2",
+		"astro": "^6.1.8",
+		"clsx": "^2.1.1",
+		"hastscript": "^9.0.1",
+		"svelte": "^5.55.4",
+		"tailwind-merge": "^3.5.0",
+		"tailwindcss": "^4.2.2",
+		"tailwindcss-animate": "^1.0.7"
+	},
+	"devDependencies": {
+		"shiki": "^4.0.2"
+	}
+}

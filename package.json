@@ -13,6 +13,9 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "pnpm prepack",
+		"build:package": "pnpm build && pnpm --filter docs build",
+		"build:preview": "pnpm --filter docs preview",
+		"docs:dev": "pnpm --filter docs dev",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"generate:components": "pnpm dlx esno scripts/index.ts && pnpm format",

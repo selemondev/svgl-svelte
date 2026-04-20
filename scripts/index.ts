@@ -5,7 +5,7 @@ import path from 'node:path';
 import fs from 'fs-extra';
 import type { Svgl } from '../src/lib/types/index';
 interface SpecialCase {
-  [key: string]: string
+	[key: string]: string;
 }
 const regex =
 	/import\s+type\s+\{\s*iSVG\s*\}\s+from\s+["']@\/types\/svg["'];?\s*[\r\n]+export\s+const\s+svgs:\s*iSVG\[\]\s*=\s*\[([\s\S]*)\](?=\s*;?\s*(?:\r?\n|$))/;
@@ -147,18 +147,25 @@ const exportFiles = async () => {
 
 		const utilsDir = path.join(getRootPath, 'src', 'lib', 'utils');
 		const utilFiles = (await fs.readdir(utilsDir))
-			.filter((file: string) => file.endsWith('.ts') && !file.endsWith('.d.ts') && file !== 'index.ts')
+			.filter(
+				(file: string) => file.endsWith('.ts') && !file.endsWith('.d.ts') && file !== 'index.ts'
+			)
 			.map((file: string) => ({
 				name: path.basename(file, '.ts'),
 				path: `../utils/${file.replace('.ts', '.js')}`
 			}));
 
 		const svelteExports = svelteFiles
-			.map(({ name, path }: { name: string, path: string }) => `export { default as ${pascalCase(name)}Logo } from '${path}';`)
+			.map(
+				({ name, path }: { name: string; path: string }) =>
+					`export { default as ${pascalCase(name)}Logo } from '${path}';`
+			)
 			.join('\n');
 
 		const utilExports = utilFiles
-			.map(({ name }: { name: string }) => `export * as ${camelCase(name)} from './utils/${name}.js';`)
+			.map(
+				({ name }: { name: string }) => `export * as ${camelCase(name)} from './utils/${name}.js';`
+			)
 			.join('\n');
 
 		const typeExports = `export type * from './types/index.js';`;
