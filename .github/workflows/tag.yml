@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.SVGL_SVELTE_AUTOMATION_TOKEN }}
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v6
         with:
           version: 10
 
