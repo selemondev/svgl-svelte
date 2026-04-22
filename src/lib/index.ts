@@ -478,7 +478,7 @@ export { default as SvglSkyLogo } from './components/Sky.svelte';
 export { default as SvglSkypeLogo } from './components/Skype.svelte';
 export { default as SvglSlackLogo } from './components/Slack.svelte';
 export { default as SvglSnapchatLogo } from './components/Snapchat.svelte';
-export { default as SvglSocketIOLogo } from './components/SocketIO.svelte';
+export { default as SvglSocketIOLogo } from './components/Socketio.svelte';
 export { default as SvglSocketioLogo } from './components/Socketio.svelte';
 export { default as SvglSolanaLogo } from './components/Solana.svelte';
 export { default as SvglSolderaLogo } from './components/Soldera.svelte';
