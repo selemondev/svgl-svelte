@@ -1,5 +1,22 @@
 # Changelog
 
+## v2.6.0
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.5.1...v2.6.0)
+
+### 🚀 Enhancements
+
+- Add 3 svgl component(s) ([#88](https://github.com/selemondev/svgl-svelte/pull/88))
+
+### 🏡 Chore
+
+- **ci:** Bump peter-evans/create-pull-request from 7 to 8 ([83f2c44](https://github.com/selemondev/svgl-svelte/commit/83f2c44))
+- **release:** V2.5.1 ([b3446fb](https://github.com/selemondev/svgl-svelte/commit/b3446fb))
+
+### ❤️ Contributors
+
+- Selemon Brahanu ([@selemondev](https://github.com/selemondev))
+
 ## v2.5.1
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.5.0...v2.5.1)
