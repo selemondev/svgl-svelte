@@ -82,6 +82,7 @@ export { default as SvglChromiumLogo } from './components/Chromium.svelte';
 export { default as SvglCiscoLogo } from './components/Cisco.svelte';
 export { default as SvglClaudeAILogo } from './components/ClaudeAI.svelte';
 export { default as SvglClerkLogo } from './components/Clerk.svelte';
+export { default as SvglClickUpLogo } from './components/ClickUp.svelte';
 export { default as SvglCloudflareLogo } from './components/Cloudflare.svelte';
 export { default as SvglCloudflareWorkersLogo } from './components/CloudflareWorkers.svelte';
 export { default as SvglCloudinaryLogo } from './components/Cloudinary.svelte';
