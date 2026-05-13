@@ -637,6 +637,7 @@ export { default as SvglWindowsLogo } from './components/Windows.svelte';
 export { default as SvglWindsurfLogo } from './components/Windsurf.svelte';
 export { default as SvglWordPressLogo } from './components/WordPress.svelte';
 export { default as SvglWorkOSLogo } from './components/WorkOS.svelte';
+export { default as SvglXAILogo } from './components/XAI.svelte';
 export { default as SvglXAIGrokLogo } from './components/XAIGrok.svelte';
 export { default as SvglXDLogo } from './components/XD.svelte';
 export { default as SvglXRPLogo } from './components/XRP.svelte';
