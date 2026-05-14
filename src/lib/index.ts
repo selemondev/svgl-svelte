@@ -288,6 +288,7 @@ export { default as SvglKokonutUILogo } from './components/KokonutUI.svelte';
 export { default as SvglKotlinLogo } from './components/Kotlin.svelte';
 export { default as SvglKrakenJSLogo } from './components/KrakenJS.svelte';
 export { default as SvglKubernetesLogo } from './components/Kubernetes.svelte';
+export { default as SvglLangChainLogo } from './components/LangChain.svelte';
 export { default as SvglLaravelLogo } from './components/Laravel.svelte';
 export { default as SvglLayersLogo } from './components/Layers.svelte';
 export { default as SvglLeapWalletLogo } from './components/LeapWallet.svelte';
