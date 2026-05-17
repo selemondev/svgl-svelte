@@ -12,6 +12,7 @@ export const parseSvgContent = (content: string) => {
 		return `<svg${attrs} width="\${width}" height="\${height}" \${restAttrs}>`;
 	});
 
+	content = content.replace(/\\/g, '\\\\');
 	content = content.replace(/`/g, '\\`');
 
 	return {
