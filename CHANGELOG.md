@@ -1,5 +1,21 @@
 # Changelog
 
+## v2.11.0
+
+[compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.10.0...v2.11.0)
+
+### 🚀 Enhancements
+
+- Add 1 svgl component(s) ([#103](https://github.com/selemondev/svgl-svelte/pull/103))
+
+### 🏡 Chore
+
+- **release:** V2.10.0 ([b03b44d](https://github.com/selemondev/svgl-svelte/commit/b03b44d))
+
+### ❤️ Contributors
+
+- Selemon Brahanu ([@selemondev](https://github.com/selemondev))
+
 ## v2.10.0
 
 [compare changes](https://github.com/selemondev/svgl-svelte/compare/v2.9.0...v2.10.0)
