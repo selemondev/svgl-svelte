@@ -458,6 +458,7 @@ export { default as SvglPrismaLogo } from './components/Prisma.svelte';
 export { default as SvglProcureLogo } from './components/Procure.svelte';
 export { default as SvglProductHuntLogo } from './components/ProductHunt.svelte';
 export { default as SvglProtonMailLogo } from './components/ProtonMail.svelte';
+export { default as SvglProtonVPNLogo } from './components/ProtonVPN.svelte';
 export { default as SvglPulumiLogo } from './components/Pulumi.svelte';
 export { default as SvglPutioLogo } from './components/Putio.svelte';
 export { default as SvglPyCharmLogo } from './components/PyCharm.svelte';
