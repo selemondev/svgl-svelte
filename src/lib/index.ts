@@ -262,6 +262,7 @@ export { default as SvglIntelliJIDEALogo } from './components/IntelliJIDEA.svelt
 export { default as SvglIntelloLogo } from './components/Intello.svelte';
 export { default as SvglInterfereLogo } from './components/Interfere.svelte';
 export { default as SvglIntlayerLogo } from './components/Intlayer.svelte';
+export { default as SvglIvyFrameworkLogo } from './components/IvyFramework.svelte';
 export { default as SvglJQueryLogo } from './components/JQuery.svelte';
 export { default as SvglJSONLogo } from './components/JSON.svelte';
 export { default as SvglJSONSchemaLogo } from './components/JSONSchema.svelte';
