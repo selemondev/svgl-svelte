@@ -109,6 +109,7 @@ export { default as SvglCohereLogo } from './components/Cohere.svelte';
 export { default as SvglCoinbaseLogo } from './components/Coinbase.svelte';
 export { default as SvglColdFusionLogo } from './components/ColdFusion.svelte';
 export { default as SvglColdFusionBuilderLogo } from './components/ColdFusionBuilder.svelte';
+export { default as SvglConductorLogo } from './components/Conductor.svelte';
 export { default as SvglConnectLogo } from './components/Connect.svelte';
 export { default as SvglConvexLogo } from './components/Convex.svelte';
 export { default as SvglCourseraLogo } from './components/Coursera.svelte';
