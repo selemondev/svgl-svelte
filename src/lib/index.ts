@@ -446,6 +446,7 @@ export { default as SvglPostCSSLogo } from './components/PostCSS.svelte';
 export { default as SvglPostHogLogo } from './components/PostHog.svelte';
 export { default as SvglPostgreSQLLogo } from './components/PostgreSQL.svelte';
 export { default as SvglPostmanLogo } from './components/Postman.svelte';
+export { default as SvglPostquedLogo } from './components/Postqued.svelte';
 export { default as SvglPowerShellLogo } from './components/PowerShell.svelte';
 export { default as SvglPowerSyncLogo } from './components/PowerSync.svelte';
 export { default as SvglPowerToysLogo } from './components/PowerToys.svelte';
