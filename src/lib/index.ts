@@ -226,6 +226,7 @@ export { default as SvglGradioLogo } from './components/Gradio.svelte';
 export { default as SvglGrafanaLogo } from './components/Grafana.svelte';
 export { default as SvglGranolaLogo } from './components/Granola.svelte';
 export { default as SvglGraphQLLogo } from './components/GraphQL.svelte';
+export { default as SvglGridaLogo } from './components/Grida.svelte';
 export { default as SvglGrokLogo } from './components/Grok.svelte';
 export { default as SvglGroqLogo } from './components/Groq.svelte';
 export { default as SvglHCaptchaLogo } from './components/HCaptcha.svelte';
