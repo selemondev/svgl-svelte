@@ -164,6 +164,7 @@ export { default as SvglEmberLogo } from './components/Ember.svelte';
 export { default as SvglEpicGamesLogo } from './components/EpicGames.svelte';
 export { default as SvglEsbuildLogo } from './components/Esbuild.svelte';
 export { default as SvglEthereumLogo } from './components/Ethereum.svelte';
+export { default as SvglEveLogo } from './components/Eve.svelte';
 export { default as SvglExomeLogo } from './components/Exome.svelte';
 export { default as SvglExperiencePlatformLogo } from './components/ExperiencePlatform.svelte';
 export { default as SvglExpoLogo } from './components/Expo.svelte';
