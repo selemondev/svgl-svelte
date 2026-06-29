@@ -30,7 +30,6 @@
 	},
 	"files": [
 		"dist",
-		"!dist/components/*.d.ts",
 		"!dist/types/*.d.ts",
 		"!dist/utils/*.d.ts",
 		"!dist/**/*.test.*",
@@ -45,7 +44,23 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./icons/*": {
+			"types": "./dist/icons/*.d.ts",
+			"svelte": "./dist/icons/*.js",
+			"default": "./dist/icons/*.js"
+		}
+	},
+	"typesVersions": {
+		">4.0": {
+			"icons/*": [
+				"./dist/icons/*.d.ts"
+			],
+			"index.d.ts": [
+				"./dist/index.d.ts"
+			]
 		}
 	},
 	"peerDependencies": {

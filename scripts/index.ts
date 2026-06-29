@@ -98,6 +98,7 @@ const getSvgUrl = (svgInfo: Svgl) => {
 const getFileUrlToPath = fileURLToPath(import.meta.url);
 const getRootPath = path.resolve(getFileUrlToPath, '..', '..');
 const targetDir = path.join(getRootPath, 'src', 'lib', 'components');
+const iconsDir = path.join(getRootPath, 'src', 'lib', 'icons');
 const specialCases: SpecialCase = {
 	'C#.svelte': 'CSharp',
 	'C++.svelte': 'CPlusPlus',
@@ -108,6 +109,11 @@ const sanitize = (fileName: string) => {
 	if (specialCases[fileName]) return specialCases[fileName];
 	return fileName.replace('.svelte', '').replace(/[^\w]/g, '');
 };
+const iconSubpathName = (name: string) =>
+	name
+		.replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
+		.replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+		.toLowerCase();
 async function createFiles(dirPath: string, file: string, content: string) {
 	if (!fs.existsSync(dirPath)) {
 		fs.mkdirSync(dirPath, { recursive: true });
@@ -144,6 +150,17 @@ const exportFiles = async () => {
 				name: path.basename(file, '.svelte'),
 				path: `./components/${file}`
 			}));
+
+		await fs.emptyDir(iconsDir);
+		await Promise.all(
+			svelteFiles.map(({ name }: { name: string }) =>
+				fs.writeFile(
+					path.join(iconsDir, `${iconSubpathName(name)}.ts`),
+					`export { default } from '../components/${name}.svelte';\n`,
+					'utf-8'
+				)
+			)
+		);
 
 		const utilsDir = path.join(getRootPath, 'src', 'lib', 'utils');
 		const utilFiles = (await fs.readdir(utilsDir))
