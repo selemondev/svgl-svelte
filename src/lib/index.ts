@@ -435,6 +435,7 @@ export { default as SvglPitchLogo } from './components/Pitch.svelte';
 export { default as SvglPlainSignalLogo } from './components/PlainSignal.svelte';
 export { default as SvglPlanetScaleLogo } from './components/PlanetScale.svelte';
 export { default as SvglPlatziLogo } from './components/Platzi.svelte';
+export { default as SvglPlausibleAnalyticsLogo } from './components/PlausibleAnalytics.svelte';
 export { default as SvglPlayStationLogo } from './components/PlayStation.svelte';
 export { default as SvglPlaywrightLogo } from './components/Playwright.svelte';
 export { default as SvglPnpmLogo } from './components/Pnpm.svelte';
