@@ -52,3 +52,7 @@ Visit the [Svgl logos](https://svgl.app/) page to explore the available Svgl log
 - [svgl-react](https://github.com/ridemountainpig/svgl-react) for the React eco-system.
 
 - [svgl-vue](https://github.com/selemondev/svgl-vue) for the Vue eco-system.
+
+## License
+
+[MIT](./LICENSE) © [Selemon Brahanu](https://selemon.dev)
