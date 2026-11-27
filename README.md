@@ -47,6 +47,17 @@ Visit the [Svgl logos](https://svgl.app/) page to explore the available Svgl log
 <SvglSvelteLogo height="{200}" width="{200}" />
 ```
 
+You can also import a single icon by default from an icon subpath. This is useful in large
+TypeScript projects because the editor does not need to load the full root export list.
+
+```html
+<script lang="ts">
+	import Vite from '@selemondev/svgl-svelte/icons/vite';
+</script>
+
+<Vite height="{200}" width="{200}" />
+```
+
 ## ©️ Eco-system
 
 - [svgl-react](https://github.com/ridemountainpig/svgl-react) for the React eco-system.
